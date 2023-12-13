@@ -4,6 +4,148 @@
     box-sizing: border-box;
 }
 
+.container {
+    width: 800px;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-box {
+    width: 50%;
+    height: 55%;
+    background-color: white;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.main-box input {
+    width: 100%;
+    height: 70px;
+    background-color: #b2e9f7;
+    border-radius: 15px;
+}
+
+.main-box .box-num {
+    width: 100%;
+    height: 85%;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: space-around;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    align-content: space-evenly;
+}
+
+/* number button  ___Start___ */
+.main-box .box-num .item {
+    background-color: #b684b9;
+    padding: 32px 35px;
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0px 1px 2px #2B3044, 0px 4px 4px #2B3044;
+    transform-style: preserve-3d;
+    transform: scale(var(--s, 1)) perspective(600px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+    perspective: 600px;
+    transition: transform 0.1s;
+    position: relative;
+    display: inline-block;
+    border: none;
+    color: #ffffff40;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.main-box .box-num .item span:last-child {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background-color: #2196F3;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.main-box .box-num .item span:first-child {
+    position: relative;
+    z-index: 1;
+}
+
+.main-box .box-num .item:hover {
+    box-shadow: 0 0 0 5px #2195f360;
+    color: #ffffff;
+}
+
+.main-box .box-num .item:active {
+    transition: 0.3s;
+    transform: scale(0.93);
+    scale: 0.95;
+}
+
+.main-box .box-num .item:hover span:last-child {
+    width: 150px;
+    height: 150px;
+    opacity: 1;
+  }
+
+/* number button  ___End___ */
+
+
+
+.main-box .box-num .zero {
+    width: 210%;
+}
+
+.main-box .box-num .zero:hover span:last-child {
+    width: 200px;
+    height: 200px;
+    opacity: 1;
+  }
+
+.main-box .box-num .for-zero {
+    position: relative;
+    right: -95px;
+}
+
+/* operators button ___Start___ */
+.main-box .box-num .operators {
+    background-color: #6fbce9;
+    font-size: xx-large;
+    padding: 28px 37px;
+    border-radius: 20px;
+    position: relative;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.2s;
+    opacity: 0.8;
+    letter-spacing: 1px;
+    box-shadow: #000000 0px 7px 2px, #000 0px 8px 5px;
+}
+
+.main-box .box-num .operators:hover {
+    opacity: 1;
+}
+
+.main-box .box-num .operators:active {
+    top: 4px;
+    box-shadow: #c0392b 0px 3px 2px, #000 0px 3px 5px;
+}
+/* operators button ___End___ */
+
+
+
+
+
 
 
 
@@ -30,7 +172,7 @@
 .back-shapes {
     width: 100%;
     height: 100%;
-    position: relative;
+    position: absolute;
     overflow: hidden;
 }
 
