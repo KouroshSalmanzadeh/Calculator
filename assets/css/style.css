@@ -20,6 +20,11 @@
     background-color: white;
     padding: 10px;
     border-radius: 20px;
+    transition: all .3s ease-in-out;
+}
+
+.main-box:hover {
+    transform: translateY(-30px);
 }
 
 .main-box input {
@@ -28,6 +33,69 @@
     background-color: #b2e9f7;
     border-radius: 15px;
 }
+
+/* Animate border for calculator (main-box)  ___Start___ */
+.glow-on-hover {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 20px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: all .3s ease-in-out;
+    border-radius: 20px;
+    transform: translateY(0);
+}
+
+.glow-on-hover:active {
+    color: #000;
+    transition: all .3s ease-in-out;
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+    transition: all .3s ease-in-out;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #2a2a2a;
+    left: 0;
+    top: 0;
+    border-radius: 20px;
+    transition: all .3s ease-in-out;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+/* Animate border for calculator (main-box)  ___End___ */
+
 
 .main-box .box-num {
     width: 100%;
@@ -143,7 +211,48 @@
 /* operators button ___End___ */
 
 
+/* Equal button ___Start___ */
+.main-box .box-num .equal {
+    width: 90px;
+    border-radius: 15px;
+    text-align: center;
+    align-items: center;
+    background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+    border: 0;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    display: flex;
+    font-family: Phantomsans, sans-serif;
+    justify-content: center;
+    line-height: 1em;
+    padding: 3px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all .3s;
+    position: relative;
+    right: -100px;
+}
 
+.equal:active {
+    transform: scale(0.93);
+    scale: 0.95;
+}
+
+.equal:hover, 
+.equal:focus {
+  animation: pulse 1s;
+  box-shadow: 0 0 0 2em rgba(#fff,0);
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 #ef6eae;}
+}
+/* Equal button ___End___ */
 
 
 
