@@ -77,46 +77,61 @@
             <div class="main-box glow-on-hover">
                 <input type="text" name="output" disabled>
                 <div class="box-num">
-                    <div class="item">
+
+                    <div class="item" onclick="Clear('clear this number')">
+                        <span>.C</span>
+                        <span></span>
+                    </div>
+                    <div class="item" style="padding: 32px 30px;" onclick="Clear('clear all')">
+                        <span>CE</span>
+                        <span></span>
+                    </div>
+                    <div class="item" onclick="Clear('clear last number')">
+                        <span>←</span>
+                        <span></span>
+                    </div>
+                    <div class="operators" onclick="oprate('divid')">÷</div>
+
+                    <div class="item" onclick="getNumber(event)">
                         <span>7</span>
                         <span></span>
                     </div>
-                    <div class="item">
+                    <div class="item" onclick="getNumber(event)">
                         <span>8</span>
                         <span></span>
                     </div>
-                    <div class="item">
+                    <div class="item" onclick="getNumber(event)">
                         <span>9</span>
                         <span></span>
                     </div>
-                    <div class="operators">/</div>
-                    <div class="item">
+                    <div class="operators" onclick="oprate('multi')">×</div>
+                    <div class="item" onclick="getNumber(event)">
                         <span>4</span>
                         <span></span>
                     </div>
-                    <div class="item">
+                    <div class="item" onclick="getNumber(event)">
                         <span>5</span>
                         <span></span>
                     </div>
-                    <div class="item">
+                    <div class="item" onclick="getNumber(event)">
                         <span>6</span>
                         <span></span>
                     </div>
-                    <div class="operators">*</div>
-                    <div class="item">
+                    <div class="operators"  onclick="oprate('minus')">-</div>
+                    <div class="item" onclick="getNumber(event)">
                         <span>1</span>
                         <span></span>
                     </div>
-                    <div class="item">
+                    <div class="item" onclick="getNumber(event)">
                         <span>2</span>
                         <span></span>
                     </div>
-                    <div class="item">
+                    <div class="item" onclick="getNumber(event)">
                         <span>3</span>
                         <span></span>
                     </div>
-                    <div class="operators">-</div>
-                    <div class="item zero">
+                    <div class="operators" onclick="oprate('plus')">+</div>
+                    <div class="item zero" onclick="getNumber(event)">
                         <span>0</span>
                         <span></span>
                     </div>
@@ -124,7 +139,7 @@
                         <span>.</span>
                         <span></span>
                     </div>
-                    <div class="equal">
+                    <div class="equal" onclick="oprate('result')">
                         <span>=</span>
                         <span></span>
                     </div>
