@@ -114,6 +114,7 @@
         -webkit-transform: translateY(0%);
     }
 }
+
 /* Background animate pattern  __End___ */
 
 
@@ -131,7 +132,7 @@
     width: 53%;
     height: 63%;
     background-color: white;
-    padding: 10px;
+    padding: 15px;
     border-radius: 20px;
     transition: all .3s ease-in-out;
 }
@@ -142,7 +143,7 @@
 
 .main-box input {
     width: 100%;
-    height: 70px;
+    height: 10%;
     background-color: #b2e9f7;
     border-radius: 15px;
     font-size: 35px;
@@ -165,7 +166,7 @@
     background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
     position: absolute;
     top: -2px;
-    left:-2px;
+    left: -2px;
     background-size: 400%;
     z-index: -1;
     filter: blur(5px);
@@ -206,29 +207,37 @@
 }
 
 @keyframes glowing {
-    0% { background-position: 0 0; }
-    50% { background-position: 400% 0; }
-    100% { background-position: 0 0; }
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
 }
+
 /* Animate border for calculator (main-box)  ___End___ */
 
 
 .main-box .box-num {
     width: 100%;
-    height: 87%;
+    height: 92%;
+    padding: 10px 0;
     display: grid;
-    grid-template-columns: auto auto auto auto;
-    justify-content: space-around;
+    grid-template-columns: 24% 24% 24% 24%;
+    gap: 6px;
     text-align: center;
     font-size: 25px;
     font-weight: bold;
-    align-content: space-evenly;
 }
 
 /* number button  ___Start___ */
 .main-box .box-num .item {
     background-color: #b684b9;
-    padding: 32px 35px;
     border-radius: 15px;
     text-align: center;
     cursor: pointer;
@@ -238,7 +247,9 @@
     perspective: 600px;
     transition: transform 0.1s;
     position: relative;
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: none;
     color: #ffffff40;
     overflow: hidden;
@@ -278,33 +289,34 @@
     width: 150px;
     height: 150px;
     opacity: 1;
-  }
+}
 
 /* number button  ___End___ */
 
 
 
 .main-box .box-num .zero {
-    width: 207%;
+    width: 205%;
 }
 
 .main-box .box-num .zero:hover span:last-child {
     width: 225px;
     height: 225px;
     opacity: 1;
-  }
+}
 
 .main-box .box-num .for-zero {
     position: relative;
-    right: -102px;
-    width: 95px;
+    right: -100px;
 }
 
 /* operators button ___Start___ */
 .main-box .box-num .operators {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #6fbce9;
     font-size: xx-large;
-    padding: 28px 37px;
     border-radius: 20px;
     position: relative;
     border: none;
@@ -313,7 +325,6 @@
     text-transform: uppercase;
     transition: 0.2s;
     opacity: 0.8;
-    letter-spacing: 1px;
     box-shadow: #000000 0px 7px 2px, #000 0px 8px 5px;
 }
 
@@ -325,16 +336,16 @@
     top: 4px;
     box-shadow: #c0392b 0px 3px 2px, #000 0px 3px 5px;
 }
+
 /* operators button ___End___ */
 
 
 /* Equal button ___Start___ */
 .main-box .box-num .equal {
-    width: 93px;
     border-radius: 15px;
     text-align: center;
     align-items: center;
-    background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+    background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
     border: 0;
     box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
     box-sizing: border-box;
@@ -352,7 +363,7 @@
     cursor: pointer;
     transition: all .3s;
     position: relative;
-    right: -102px;
+    right: -100px;
 }
 
 .equal:active {
@@ -360,15 +371,18 @@
     scale: 0.95;
 }
 
-.equal:hover, 
+.equal:hover,
 .equal:focus {
-  animation: pulse 1s;
-  box-shadow: 0 0 0 2em rgba(#fff,0);
+    animation: pulse 1s;
+    box-shadow: 0 0 0 2em rgba(#fff, 0);
 }
 
 @keyframes pulse {
-  0% { box-shadow: 0 0 0 0 #ef6eae;}
+    0% {
+        box-shadow: 0 0 0 0 #ef6eae;
+    }
 }
+
 /* Equal button ___End___ */
 
 
@@ -390,6 +404,44 @@
 
 
 @media (max-width:600px) {
+
+    .container {
+        width: 95%;
+    }
+
+    .main-box {
+        width: 100%;
+        height: 80%;
+    }
+
+    .item {
+        /* width: 80px;
+        height: 80px; */
+        padding: 0 !important;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .operators {
+        padding: 0 !important;
+        letter-spacing: 0;
+        /* width: 50px; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .zero {
+        width: 206% !important;
+    }
+
+    .for-zero,
+    .equal {
+        right: -92px !important;
+    }
+
+
     .backwrap {
         background-repeat: no-repeat;
         background-size: cover;
